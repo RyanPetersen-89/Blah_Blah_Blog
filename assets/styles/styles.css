@@ -1,0 +1,116 @@
+/* Light mode variables */
+:root {
+  --background-color: #f8f9fa;
+  --text-color: #333;
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --background-color: #333;
+  --text-color: #fff;
+}
+
+.dark-mode form input[type="text"],
+.dark-mode form textarea {
+    background-color: #555;
+    border-color: #444;
+    color: #fff;
+}
+
+/* Apply color variables to elements */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+/* Main Content */
+main {
+  width: 70%;
+  padding: 20px;
+  float: left;
+  background-color: var(--background-color);
+}
+
+/* Aside (Sidebar) */
+#sidebar {
+  width: 25%;
+  float: right;
+  background-color: var(--background-color);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  margin-right: 60px;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9ee6f0;
+  transition: background-color 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-image: url('../imgs/icons/sun.png');
+  background-size: cover;
+  transition: transform 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #555555;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark mode */
+.dark-mode input:checked + .slider {
+  background-color: #272950;
+}
+
+.dark-mode input:checked + .slider:before {
+  background-color: white;
+}
+
+.dark-mode .slider:before {
+  background-image: url('../imgs/icons/moon.png');
+}
